@@ -1,5 +1,5 @@
 <?php
-DEFINE('CONFIG_FILE', 'D:\OSPanel\domains\testovoe-zadanie\app\config\config.json');
+DEFINE('CONFIG_FILE', ''); // константа кофинг файла, здесь нужно указать свой путь до моей папки с app/config/config.json
 DEFINE('NL', PHP_EOL);
 
 class ApiController
@@ -20,7 +20,8 @@ class ApiController
         $this->password = $this->decodedcfg['password'];
         $this->token = $this->GetToken($this->username, $this->password);
     }
-
+    
+    // проаерка на налчичие конфиг файла 
     public function CheckConfigFile()
     {
         if (!file_exists(CONFIG_FILE)) {
@@ -29,7 +30,8 @@ class ApiController
             echo 'Кофигурационный файлл присутсвует';
         }
     }
-
+    
+     // получение токена
     public function GetToken($username, $password)
     {
         $UsernameEncoded = urlencode($username);
@@ -60,7 +62,8 @@ class ApiController
         $token = $output['access_token'];
         return $token;
     }
-
+    
+    // получение кредитных карт
     public function Cards($id)
     {
 
