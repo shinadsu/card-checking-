@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- 
+    основной фалй файл шаблона через который просходят все манипуляции
+ -->
 
 <head>
     <meta charset="utf-8">
@@ -15,12 +18,11 @@
 <body>
     <?php
 
-    require_once 'core.php';
+    require_once 'core.php'; // рекуярим необходимый файл
 
-    $Apic = new ApiController();
+    $Apic = new ApiController(); // создаем эземпляр нашего класса
 
-
-    $response = $Apic->Cards(2);
+    $response = $Apic->Cards(2); // в переменной указан класс который берет метод который в свою очередь возвращает кредитки
 
 
     ?>
