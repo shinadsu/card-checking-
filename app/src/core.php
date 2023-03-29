@@ -21,7 +21,7 @@ class ApiController
         $this->token = $this->GetToken($this->username, $this->password);
     }
     
-    // проаерка на налчичие конфиг файла 
+    // проверка на налчичие конфиг файла 
     public function CheckConfigFile()
     {
         if (!file_exists(CONFIG_FILE)) {
